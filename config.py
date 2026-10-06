@@ -1,0 +1,42 @@
+import numpy as np
+MEGA = 1e+6
+KILO=1e+3
+NANO=1e-9
+
+# Длина волны фильтра
+WAVELENGTH_START=1056
+WAVELENGTH_STOP=1071 # Последняя точка не включается в массив
+WAVELENGTH_STEP=1
+WAVELENGTHS=np.arange(WAVELENGTH_START, WAVELENGTH_STOP, WAVELENGTH_STEP)
+
+# Ширина линии фильтра
+LINEWIDTHS = [2,1,3]
+
+
+BTF_COM='COM11'
+STABILIZATION_TIME=3
+
+
+
+PM_DURATION=1
+PM_POINTS=3
+PM_LABEL = "Power (mW)"
+ITERATION_LABEL='Iteration (N)'
+
+
+RF_START_6000_MHz=50*MEGA
+RF_STOP_6000_MHz=1050*MEGA
+# RF_F_CENTER_1000_MHz = 3005*MEGA
+# RF_SPAN_1000_MHz=6000*MEGA
+RF_SPAN_100_MHz=100*MEGA
+RF_SPAN_10_MHz=10*MEGA
+RF_SPAN_1_MHz=1*MEGA
+
+RF_RBW = 1*KILO # Разрешение одиноково во всех измерениях.
+RF_RBW_100MHz = 100
+RF_LEVEL = -20
+RF_TRACE_POINTS = 10_001
+
+
+TIME_BETWEEN_ITERATIONS=30 # Время между итерациями цикла. В секундах.
+NUMBER_ITERATIONS=40

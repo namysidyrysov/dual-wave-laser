@@ -17,10 +17,10 @@ from devices_libs.pm_400.PMDevice import PMDevicePM100D, measure_average_power
 from scripts.create_folder import create_date_folder
 from scripts.write_value_txt import write_value_txt
 from scripts.information_about_experiment import info_about_experiment
-from scripts.write_xy_data_txt import write_xy_data_txt
-from measure_libs.rf_measure_lib_v2 import rf_measurement
+from scripts.write_xy_txt import write_xy_txt
+from measure_libs.rf_measure import rf_measurement
 from measure_libs.yokogawa_measure_lib_v3 import yoko_measurement
-from measure_libs.oscilloscope_measure_lib import oscilloscope_measurement
+from measure_libs.osc_measure import oscilloscope_measurement
 
 import numpy as np
 import time
@@ -58,8 +58,7 @@ ITERATION_LABEL='Iteration (N)'
 
 RF_START_6000_MHz=50*MEGA
 RF_STOP_6000_MHz=1050*MEGA
-# RF_F_CENTER_1000_MHz = 3005*MEGA
-# RF_SPAN_1000_MHz=6000*MEGA
+
 RF_SPAN_100_MHz=100*MEGA
 RF_SPAN_10_MHz=10*MEGA
 RF_SPAN_1_MHz=1*MEGA
@@ -262,7 +261,7 @@ def main():
 
 
                 #  Записываем мощности 
-                write_xy_data_txt(
+                write_xy_txt(
                     x_arr=iteration_arr,
                     x_label=ITERATION_LABEL,
                     y_arr=pm_arr,

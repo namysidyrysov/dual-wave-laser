@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.ticker import AutoMinorLocator
 
-def plot_xy_data(
-        x, 
-        xlabel, 
-        y,
-        ylabel, 
+def plot_xy(
+        x_arr, 
+        x_label, 
+        y_arr,
+        y_label, 
         title,
         folder_path=None, 
-        filename=None, 
+        file_name=None, 
         show_plot=False
     ):
     """
@@ -44,7 +44,7 @@ def plot_xy_data(
     # ========================
     full_path = None
     
-    if folder_path is not None and filename is not None:
+    if folder_path is not None and file_name is not None:
         # Защита от пустого пути
         if not folder_path or not folder_path.strip():
             folder_path = '.'
@@ -72,8 +72,8 @@ def plot_xy_data(
     plt.plot(x, y, linewidth=2)
     if title is not None:
         plt.title(title, fontsize=FONT_SIZE_TITLE_TEXT, fontname=FONT_FAMILY)
-    plt.xlabel(xlabel, fontsize=FONT_SIZE_LABEL, fontname=FONT_FAMILY)
-    plt.ylabel(ylabel, fontsize=FONT_SIZE_LABEL, fontname=FONT_FAMILY)
+    plt.xlabel(x_label, fontsize=FONT_SIZE_LABEL, fontname=FONT_FAMILY)
+    plt.ylabel(y_label, fontsize=FONT_SIZE_LABEL, fontname=FONT_FAMILY)
     
     # Основная сетка
     plt.grid(True, which='major', linestyle='-', linewidth=1, alpha=1)
@@ -87,8 +87,8 @@ def plot_xy_data(
     # ========================
     # СОХРАНЕНИЕ
     # ========================
-    if folder_path is not None and filename is not None:
-        full_path = os.path.join(folder_path, f"{filename}.png")
+    if folder_path is not None and file_name is not None:
+        full_path = os.path.join(folder_path, f"{file_name}.png")
         plt.savefig(full_path, dpi=100, bbox_inches='tight')
         print(f"График сохранён в: {full_path}")
 
@@ -114,11 +114,11 @@ if __name__ == "__main__":
     # ───────────────────────────────────────────────────────────
     # ТОЛЬКО ПОКАЗАТЬ (без сохранения)
     # ───────────────────────────────────────────────────────────
-    plot_xy_data(
+    plot_xy(
         x=x,
         y=y,
         title='График',
-        xlabel="Ось X",
+        x_label="Ось X",
         ylabel="Ось Y",
         folder_path='graph',
         filename='example',

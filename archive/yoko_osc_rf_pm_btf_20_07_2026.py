@@ -13,9 +13,9 @@ from devices_libs.pm_400.PMDevice import PMDevicePM100D, measure_average_power
 # from mock_devices.pm_400.PMDevice import PMDevicePM100D, measure_average_power
 
 from scripts.create_folder import create_date_folder
-from measure_libs.rf_measure_lib_v2 import rf_measurement
+from measure_libs.rf_measure import rf_measurement
 from measure_libs.yokogawa_measure_lib_v3 import yoko_measurement
-from measure_libs.oscilloscope_measure_lib import oscilloscope_measurement
+from measure_libs.osc_measure import oscilloscope_measurement
 
 import numpy as np
 import time
