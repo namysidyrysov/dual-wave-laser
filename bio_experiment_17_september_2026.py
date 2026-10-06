@@ -1,7 +1,7 @@
 from devices_libs.yokogawa.Yokogawa_OSA import YokogawaOSA
 from devices_libs.btf_100.btf_100 import BTF100
 from scripts.create_folder import create_date_folder
-from measure_libs.osa_measure import yoko_measurement
+from measure_libs.yokogawa_measure_lib_v2 import yoko_measurement
 import time
 
 

@@ -2,14 +2,14 @@ import os
 import numpy as np
 
 
-def write_xy_txt(
+def write_xy_data_txt(
         x_arr,
         x_label,
         y_arr,
         y_label,
         header=None,
         folder_path="test_folder",
-        file_name="output.txt",
+        filename="output.txt",
     ):
     """
     Функция записывает два массива x_arr, y_arr в txt файл.
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     test_header = "Информация об эскприменте. Например, настройки, дата и так далее."
 
 
-    write_xy_txt(
+    write_xy_data_txt(
         x_arr=x,
         x_label=x_label,
         y_arr=y,

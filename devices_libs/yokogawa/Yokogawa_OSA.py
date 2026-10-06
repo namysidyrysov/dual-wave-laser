@@ -50,7 +50,7 @@ class YokogawaOSA:
         """val example: 0.5 (nm)"""
         self.device.write(":sens:band:res" + " " + f"{val}nm")
 
-    def peform_zeroing(self):
+    def perform_zeroing(self):
         self.device.send(":cal:wav:zero ONCE")
 
     def disable_zeroing(self):
@@ -97,7 +97,7 @@ if __name__=="__main__":
     osa = YokogawaOSA()
 
     # Настройка диапазона измерений 
-    osa.set_start(1540)
+    osa.set_start(900)
     osa.set_stop(1590)
 
     # Запуск измерения и получение данных
@@ -105,7 +105,8 @@ if __name__=="__main__":
 
     # Визуализация результатов
     plt.plot(wave_arr, ampl_arr)
-    plt.show()
+    #plt.show()
 
     # Закрытие соединения
     # osa.close_connect()
+
